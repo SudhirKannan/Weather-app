@@ -1,0 +1,257 @@
+/* -------------------------------------- */
+/*           GLOBAL STYLING               */
+/* -------------------------------------- */
+
+body {
+    background: linear-gradient(to right, #74ebd5, #acb6e5);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 60px 0 0 0; /* Top padding for when title moves up */
+}
+
+.display-2 {
+    text-align: center;
+    color: #03045e;
+    font-weight: bolder;
+    margin: 30px 0;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+.display-2:hover {
+    transition: 1s;
+    color: #4300FF;
+}
+
+.display-2.up {
+    opacity: 0.8;
+}
+
+#tagline {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+#tagline.up {
+    opacity: 0.8;
+}
+
+/* -------------------------------------- */
+/*            INPUT SECTION               */
+/* -------------------------------------- */
+
+#input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    margin: 20px 0;
+}
+@media (min-width: 576px) {
+    #input-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+#input-container.up {
+    opacity: 0.9;
+}
+
+#input {
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 1px solid #cccccc;
+    width: 100%;
+    max-width: 280px;
+    outline: none;
+    transition: box-shadow 0.3s ease;
+}
+#input:focus {
+    box-shadow: 0 0 5px rgba(3, 4, 94, 0.5);
+}
+
+/* -------------------------------------- */
+/*               BUTTON                   */
+/* -------------------------------------- */
+
+#button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 15px;
+    background-color: #03045e;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+#button:hover {
+    background-color: #0077b6;
+}
+
+/* -------------------------------------- */
+/*          OUTPUT CONTAINER              */
+/* -------------------------------------- */
+
+#output-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1000px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#output-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------------------------- */
+/*           CURRENT WEATHER              */
+/* -------------------------------------- */
+
+#current-div {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#current-div.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+#current-div p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+#current-div img {
+    margin-top: 10px;
+    width: 100px;
+}
+
+/* -------------------------------------- */
+/*           FORECAST SECTION             */
+/* -------------------------------------- */
+
+#forecast-div {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#forecast-div.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* -------------------------------------- */
+/*             FORECAST CARD              */
+/* -------------------------------------- */
+
+.forecast-card {
+    background-color: #2370bc;
+    border-radius: 15px;
+    padding: 12px;
+    width: 140px;
+    min-width: 140px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    color: white;
+    flex-shrink: 0;
+    transition: background-color 1s ease;
+}
+
+/* -------------------------------------- */
+/*           HOVER EFFECTS                */
+/* -------------------------------------- */
+
+.forecast-card:hover,
+#current-div:hover {
+    transition: all 1.5s ease;
+    background: linear-gradient(to right, #4300FF, #0065F8);
+}
+
+/* -------------------------------------- */
+/*            COLOR THEMES                */
+/* -------------------------------------- */
+
+.card-color {
+    background-color: #2370bc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cont-color {
+    background-color: rgba(3, 4, 94, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* -------------------------------------- */
+/*             RESPONSIVE CSS             */
+/* -------------------------------------- */
+
+@media (max-width: 576px) {
+    #input {
+        max-width: 100%;
+        font-size: 14px;
+    }
+
+    #button {
+        font-size: 14px;
+    }
+
+    .forecast-card {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    #current-div p {
+        font-size: 16px;
+    }
+
+    .display-2.up,
+    #tagline.up,
+    #input-container.up {
+        transform: none;
+        opacity: 0.9;
+    }
+}
+
+/* -------------------------------------- */
+/*            PAGE WRAPPER                */
+/* -------------------------------------- */
+
+.page-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+@media (max-width: 576px) {
+    .page-wrapper {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        align-items: center;
+    }
+}
