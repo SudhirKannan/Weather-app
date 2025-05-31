@@ -1,6 +1,6 @@
-# Weather Web App
+# Rain or Shine
 
-This is a responsive single-page weather web application that provides **real-time weather information** for any city worldwide using the OpenWeatherMap API.
+Rain or Shine is a responsive single-page weather web application that provides **real-time weather information** for any city worldwide using the OpenWeatherMap API.
 
 ## Features
 
