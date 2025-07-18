@@ -9,7 +9,7 @@ ______________________________________
 
 ---
 
-## 📝 Internship Work Summary
+## 📝 Project Description
 
 During my internship at CodTech IT Solutions, under the mentorship of Neela Santosh, I developed a responsive weather web application titled Rain or Shine. This single-page application was designed to fetch and display real-time weather information for any city using the OpenWeatherMap API. The goal was to enhance my front-end development skills while building an interactive and API-driven web tool.
 
